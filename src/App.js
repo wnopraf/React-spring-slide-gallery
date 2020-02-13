@@ -11,7 +11,7 @@ export default function App() {
   const [state, setState] = useState(0)
   const [slidePosition, setSlidePosition] = useState(0)
   const transition = useTransition(state, k => k, {
-    initial: null, 
+    initial: null,
     ...setStyle(),
     onDestroyed: () => setSlidePosition(galeryInterval(state))
   })
@@ -64,7 +64,7 @@ export default function App() {
           transform: 'translate3d(-50%,0,0)'
         },
         enter: { opacity: 1, transform: 'translate3d(0,0,0)' },
-        leave: { opacity: 0.5 , transform: 'translate3d(50%,0,0)'}
+        leave: { opacity: 0.5, transform: 'translate3d(50%,0,0)' }
       }
     }
   }
