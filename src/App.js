@@ -53,7 +53,7 @@ export default function App() {
       return {
         from: { opacity: 0, transform: 'translate3d(50%,0,0)' },
         enter: { opacity: 1, transform: 'translate3d(0,0,0)' },
-        leave: { opacity: 0 }
+        leave: { opacity: 0.5, transform: 'translate3d(-50%,0,0)' }
       }
     } else {
       return {
@@ -62,7 +62,7 @@ export default function App() {
           transform: 'translate3d(-50%,0,0)'
         },
         enter: { opacity: 1, transform: 'translate3d(0,0,0)' },
-        leave: { opacity: 0 }
+        leave: { opacity: 0.5 , transform: 'translate3d(50%,0,0)'}
       }
     }
   }
