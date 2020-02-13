@@ -3,6 +3,7 @@ import { animated, useTransition } from 'react-spring'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import images from './images'
 import './styles.css'
+import SlideTracker from './components/SlideTracker'
 
 export default function App() {
   const stateCapturer = useRef(0)
@@ -10,7 +11,7 @@ export default function App() {
   const [state, setState] = useState(0)
   const [slidePosition, setSlidePosition] = useState(0)
   const transition = useTransition(state, k => k, {
-    initial: null,
+    initial: null, 
     ...setStyle(),
     onDestroyed: () => setSlidePosition(galeryInterval(state))
   })
@@ -40,6 +41,7 @@ export default function App() {
       >
         <IoIosArrowForward />
       </span>
+      <SlideTracker slides={images.length} slidePosition={slidePosition} />
     </div>
   )
   function goLeft() {
