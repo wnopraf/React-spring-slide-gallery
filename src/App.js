@@ -8,11 +8,11 @@ export default function App() {
   const stateCapturer = useRef(0)
 
   const [state, setState] = useState(0)
-
+  const [slidePosition, setSlidePosition] = useState(0)
   const transition = useTransition(state, k => k, {
     initial: null,
     ...setStyle(),
-    onDestroyed: () => console.log('destroyed')
+    onDestroyed: () => setSlidePosition(galeryInterval(state))
   })
   const galeryInterval = fixedIntervalFactory(images.length)
   useEffect(() => {
